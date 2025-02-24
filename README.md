@@ -8,7 +8,7 @@
 
 # StreamFlow: Aplikasi Live Streaming Multi-Window
 
-StreamFlow adalah aplikasi live streaming yang memungkinkan kamu untuk melakukan siaran langsung ke berbagai platform seperti YouTube, Facebook, dan lainnya menggunakan protokol RTMP. Aplikasi ini berjalan di VPS (Virtual Private Server) dan mendukung streaming ke banyak platform sekaligus dengan fitur multi-window. StreamFlow juga dilengkapi dengan fitur login dan history streaming untuk melacak history streaming.
+StreamFlow adalah aplikasi live streaming yang memungkinkan kamu untuk melakukan live streaming ke berbagai platform seperti YouTube, Facebook, dan lainnya menggunakan protokol RTMP. Aplikasi ini berjalan di VPS (Virtual Private Server) dan mendukung streaming ke banyak platform sekaligus dengan fitur multi-window. StreamFlow juga dilengkapi dengan fitur login, gallery dan history streaming untuk melacak history streaming.
    <p align="center">
    <img alt="screenshot" src="https://raw.githubusercontent.com/bangtutorial/streamflow/refs/heads/main/public/img/screenshot.jpg" width="500px" height="auto" />
    </p>
@@ -27,7 +27,7 @@ StreamFlow adalah aplikasi live streaming yang memungkinkan kamu untuk melakukan
 1. **Install Node.js dan npm melalui NodeSource PPA:**
 
    ```bash
-   curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
    sudo apt-get install -y nodejs
    sudo apt-get install -y npm
    ```
@@ -48,10 +48,11 @@ StreamFlow adalah aplikasi live streaming yang memungkinkan kamu untuk melakukan
    ffmpeg -version
    ```
    
-3. **Install PM2:**
+3. **Install PM2 + Sharp:**
 
    ```bash
    npm install -g pm2
+   npm install --os=linux --cpu=x64 sharp
    ```
 
 4. **Clone Repositori:**
@@ -90,7 +91,14 @@ StreamFlow adalah aplikasi live streaming yang memungkinkan kamu untuk melakukan
    pm2 stop streamflow
    ```
 
-8. **Konfigurasi:**
+7. **Reset Password:**
+   
+   Jalankan perintah ini di terminal
+   ```bash
+   npm start reset-streamflow
+   ```
+
+9. **Konfigurasi:**
     * Pastikan kamu sudah mengatur URL RTMP yang sesuai untuk setiap platform yang ingin digunakan. Konfigurasi ini bisa dilakukan langsung melalui tampilan aplikasi.
     * Silahkan dapatkan Stream Key dari platform streaming yang kamu gunakan.
 
@@ -108,4 +116,4 @@ Jika teman-teman punya ide atau perbaikan koding aplikasi ini, silakan buat pull
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/bangtutorial/streamflow/blob/main/LICENSE)
 
-Hak Cipta © 2025 - [Bang Tutorial](https://youtube.com/bangtutorial)
+© 2025 - [Bang Tutorial](https://youtube.com/bangtutorial)
